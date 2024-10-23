@@ -20,5 +20,9 @@ public class Enemy : MonoBehaviour
     {
         Vector3 flowPlayer = (player.transform.position - transform.position).normalized;
         enemyRigid.AddForce(flowPlayer * speedEnemy);
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
