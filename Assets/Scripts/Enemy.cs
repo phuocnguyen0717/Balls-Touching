@@ -12,10 +12,13 @@ public class Enemy : MonoBehaviour
         enemyRigid = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
     }
-
-    // Update is called once per frame
     void Update()
     {
-        enemyRigid.AddForce((player.transform.position - transform.position).normalized * speedEnemy);
+        MoveTowardsEnemy();
+    }
+    private void MoveTowardsEnemy()
+    {
+        Vector3 flowPlayer = (player.transform.position - transform.position).normalized;
+        enemyRigid.AddForce(flowPlayer * speedEnemy);
     }
 }

@@ -8,13 +8,10 @@ public class SpawnManager : MonoBehaviour
     private float spawnBound = 9.0f;
     void Start()
     {
-
         Instantiate(spawnPrefabs, GenerateSpawnPosition(), spawnPrefabs.transform.rotation);
     }
-
     void Update()
     {
-
     }
     private Vector3 GenerateSpawnPosition()
     {
